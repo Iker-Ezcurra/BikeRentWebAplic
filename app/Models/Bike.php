@@ -10,13 +10,14 @@ class Bike extends Model
     use HasFactory;
 
     protected $fillable = [
-        'price_per_hour',
-        'model',
         'serial_number',
+        'model',
+        'price_per_hour',
         'status',
     ];
 
-    public function bookings(){
+    public function bookings()
+    {
         return $this->hasMany(Booking::class);
     }
 }

@@ -3,31 +3,28 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Booking extends Model
 {
-    protected $fillable =[
-        'star_time',
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'bike_id',
+        'start_time',
         'end_time',
-        'total_cost',
         'status',
-        'user_ID',
-        'bike_ID',
+        'total_cost',
     ];
 
-    protected function casts(): array{
-        return[
-            'star_time' => 'datetime',
-            'end_time' => 'datetime',
-            'total_cost' => 'decimal:2',
-        ]
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function user(): BelongsTo{
-        return $this->belongTo(User::class);
-    }
-
-    public function bike(): BelongsTo{
-        return $this->belongTo(Bike::class);
+    public function bike()
+    {
+        return $this->belongsTo(Bike::class);
     }
 }
