@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bike;
+use App\Models\Booking;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -18,13 +22,16 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($bike)
     {
-        if ($bike->status !== 'available') {
-            return redirect()->route('bikes.index')->with('error', 'Esta bicicleta no se encuentra disponible para alquilar.');
-        }
-        return view('bookings.create', compact('bike'));
+        $bike = Bike::findOrFail($bike);
 
+        if ($bike->status !== 'available') {
+            return redirect()->route('bikes.index')
+                ->with('error', 'Esta bicicleta no se encuentra disponible para alquilar.');
+        }
+
+        return view('bookings.create', compact('bike'));
     }
 
     /**
@@ -38,22 +45,22 @@ class BookingController extends Controller
             'end_time' => 'required|date|after:start_time',
         ]);
 
-        bike=Bike::findOrFail(request->bike_id);
+        $bike=Bike::findOrFail($request->bike_id);
 
         if ($bike->status !== 'available') {
             return back()->withErrors(['bike_id' => 'La bicicleta seleccionada no esta disponible.']);
         }
 
-        startTime=Carbon::parse(request->start_time);
-        endTime=Carbon::parse(request->end_time);
+        $startTime=Carbon::parse($request->start_time);
+        $endTime=Carbon::parse($request->end_time);
 
         $hasOverlap = Booking::where('bike_id', $bike->id)
             ->whereIn('status', ['pending', 'active'])
-            ->where(function (query)use(startTime, $endTime) {
-                query->whereBetween('starttime',[startTime, $endTime])
-                      ->orWhereBetween('end_time', [$startTime, $endTime])
-                      ->orWhere(function (q)use(startTime, $endTime) {
-                          $q->where('start_time', '<=', $startTime)
+            ->where(function ($query) use ($startTime, $endTime) {
+            $query->whereBetween('start_time', [$startTime, $endTime])
+                ->orWhereBetween('end_time', [$startTime, $endTime])
+                ->orWhere(function ($q) use ($startTime, $endTime) {    
+                      $q->where('start_time', '<=', $startTime)
                             ->where('end_time', '>=', $endTime);
                       });
             })
@@ -63,7 +70,7 @@ class BookingController extends Controller
             return back()->withInput()->withErrors(['start_time' => 'La bicicleta ya esta reservada en ese horario.']);
         }
 
-        $hours = startTime->diffInHours(endTime);
+        $hours = $startTime->diffInHours($endTime);
         $hours = $hours > 0 ? $hours : 1;
         $totalCost = $hours * $bike->price_per_hour;
 
@@ -82,12 +89,14 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Booking $booking)
     {
         if ($booking->user_id !== Auth::id()) {
             abort(403, 'No tienes permiso para ver esta reserva.');
         }
+
         $booking->load('bike');
+
         return view('bookings.show', compact('booking'));
     }
 
