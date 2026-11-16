@@ -1,6 +1,6 @@
 <x-guest-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="" />
+    <x-auth-session-status :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -8,7 +8,14 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="" />
+            <x-text-input
+                id="email"
+                class=""
+                type="email"
+                name="email"
+                required
+                autocomplete="username"
+            />
             <x-input-error :messages="$errors->get('email')" class="" />
         </div>
 
@@ -27,7 +34,7 @@
         <!-- Remember Me -->
         <div class="">
             <label for="remember_me" class="">
-                <input id="remember_me" type="checkbox" class="">
+                <input id="remember_me" type="checkbox" name="remember">
                 <span class="">{{ __('Remember me') }}</span>
             </label>
         </div>
