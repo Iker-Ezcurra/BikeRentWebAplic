@@ -10,11 +10,11 @@
 
     <h1>Listado de bicicletas</h1>
 
-    <div class="bike-container">
+    <div class="">
 
         @foreach($bikes as $bike)
 
-            <div class="bike-card">
+            <div class="">
 
                 <h2>{{ $bike->model }}</h2>
 
@@ -24,14 +24,14 @@
                     {{ $bike->serial_number }}
                 </p>
 
-                <p class="price">
+                <p class="">
                     {{ number_format($bike->price_per_hour, 2) }} €/hora
                 </p>
 
                 <p>
                     <strong>Estado:</strong>
 
-                    <span class="status {{ $bike->status }}">
+                    <span class="">
                         {{ ucfirst($bike->status) }}
                     </span>
                 </p>
