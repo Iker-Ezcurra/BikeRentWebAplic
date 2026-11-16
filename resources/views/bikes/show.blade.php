@@ -37,6 +37,10 @@
             {{ $bike->status }}
         </div>
 
+        <a href="{{ route('bookings.create', $bike->id) }}">
+            Reservar
+        </a>
+
         <a href="{{ route('bikes.index') }}" class="">
             Volver al catálogo
         </a>
