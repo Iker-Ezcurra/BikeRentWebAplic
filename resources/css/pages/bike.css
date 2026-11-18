@@ -1,0 +1,13 @@
+.bike-page {
+    background-color: var(--primary-color);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.bike__contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0 10%;
+}
+

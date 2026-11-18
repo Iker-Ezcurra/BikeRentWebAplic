@@ -4,9 +4,17 @@
 @import './components/buttons.css';
 @import './components/cards.css';
 @import './components/forms.css';
+@import './components/seeker.css';
 @import './layout/footer.css';
 @import './layout/header.css';
 @import './layout/navigation.css';
-@import './pages/contact.css';
-@import './pages/contact.css';
-@import './pages/home.css';
+@import './pages/bike.css';
+
+:root {
+  --primary-color: #2081ff;
+  --secondary-color: #00b7b8;
+  --login-color: #7a8aff;
+  --green-button-color: #26FF7C;
+  --red-button-color: #ff0068;
+  --red: #ff0000;
+}

@@ -1,54 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de bicicletas</title>
-</head>
+@extends('layouts.app')
 
-<body>
+@section('body-class', 'bike-page')
 
-    <h1>Listado de bicicletas</h1>
+@section('content')
 
-    <div class="">
+<div>
 
-        @forelse($bikes as $bike)
+    <h1 class="bike__title">Listado de bicicletas</h1>
 
-            <div class="">
+    {{-- Buscador --}}
+    <div class="bike__buscador">
 
-                <h2>{{ $bike->model }}</h2>
-
-                <p><strong>ID:</strong> {{ $bike->id }}</p>
-
-                <p><strong>Número de serie:</strong>
-                    {{ $bike->serial_number }}
-                </p>
-
-                <p class="">
-                    {{ number_format($bike->price_per_hour, 2) }} €/hora
-                </p>
-
-                <p>
-                    <strong>Estado:</strong>
-
-                    <span class="">
-                        {{ ucfirst($bike->status) }}
-                    </span>
-                </p>
-
-                <a href="{{ route('bikes.show', $bike->id) }}">
-                    Ver información
-                </a>
-
-            </div>
-
-        @empty
-
-            <p>No hay bicicletas disponibles.</p>
-
-        @endforelse
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar bicicleta..."
+        >
 
     </div>
 
-</body>
-</html>
+    {{-- Listado --}}
+    <div class="bike__contenedor" id="lista-bicicletas">
+
+        @include('bikes.lista')
+
+    </div>
+
+</div>
+
+<script>
+    
+</script>
+
+@endsection
