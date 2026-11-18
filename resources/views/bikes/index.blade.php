@@ -12,7 +12,7 @@
 
     <div class="">
 
-        @foreach($bikes as $bike)
+        @forelse($bikes as $bike)
 
             <div class="">
 
@@ -42,7 +42,11 @@
 
             </div>
 
-        @endforeach
+        @empty
+
+            <p>No hay bicicletas disponibles.</p>
+
+        @endforelse
 
     </div>
 
