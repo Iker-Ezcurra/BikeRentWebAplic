@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de bicicletas</title>
-</head>
+@extends('layouts.app')
 
-<body>
+@section('content')
 
     <h1>Listado de bicicletas</h1>
 
-    <div class="">
+    <div>
 
         @forelse($bikes as $bike)
 
-            <div class="">
+            <div>
 
                 <h2>{{ $bike->model }}</h2>
 
                 <p><strong>ID:</strong> {{ $bike->id }}</p>
 
-                <p><strong>Número de serie:</strong>
+                <p>
+                    <strong>Número de serie:</strong>
                     {{ $bike->serial_number }}
                 </p>
 
-                <p class="">
+                <p>
                     {{ number_format($bike->price_per_hour, 2) }} €/hora
                 </p>
 
                 <p>
                     <strong>Estado:</strong>
-
-                    <span class="">
-                        {{ ucfirst($bike->status) }}
-                    </span>
+                    {{ ucfirst($bike->status) }}
                 </p>
 
                 <a href="{{ route('bikes.show', $bike->id) }}">
@@ -50,5 +42,4 @@
 
     </div>
 
-</body>
-</html>
+@endsection
