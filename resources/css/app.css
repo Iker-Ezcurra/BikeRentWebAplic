@@ -10,3 +10,12 @@
 @import './pages/contact.css';
 @import './pages/contact.css';
 @import './pages/home.css';
+
+:root {
+  --primary-color: #2081ff;
+  --secondary-color: #00b7b8;
+  --login-color: #7a8aff;
+  --green-button-color: #26FF7C;
+  --red-button-color: #ff0068;
+  --red: #ff0000;
+}
