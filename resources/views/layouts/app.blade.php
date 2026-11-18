@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="@yield('body-class', 'default-page')">
 
     @include('components.navbar')
 

@@ -8,9 +8,21 @@ use App\Models\Bike;
 
 class BikeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $bikes = Bike::all();
+        $search = $request->input('search');
+
+        $bikes = Bike::query()
+            ->when($search, function ($query, $search) {
+                $query->where('model', 'LIKE', "%{$search}%")
+                    ->orWhere('serial_number', 'LIKE', "%{$search}%")
+                    ->orWhere('status', 'LIKE', "%{$search}%");
+            })
+            ->get();
+
+        if ($request->ajax()) {
+            return view('bikes.lista', compact('bikes'));
+        }
 
         return view('bikes.index', compact('bikes'));
     }

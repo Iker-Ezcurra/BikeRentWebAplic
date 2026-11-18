@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('body-class', 'bike-page')
+
 @section('content')
 
     <div class="">
