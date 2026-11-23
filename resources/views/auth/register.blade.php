@@ -1,10 +1,12 @@
-```blade
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" class="login-form">
+        <h1 class="login-title">Bienvenido</h1>
+        <p class="login-subtitle">Registrar tu cuenta</p>
+
         @csrf
 
         <!-- Name -->
-        <div>
+        <div class="login-field">
             <x-input-label for="name" :value="__('Name')" />
 
             <x-text-input
@@ -21,7 +23,7 @@
         </div>
 
         <!-- Email Address -->
-        <div>
+        <div class="login-field">
             <x-input-label for="email" :value="__('Email')" />
 
             <x-text-input
@@ -37,7 +39,7 @@
         </div>
 
         <!-- Password -->
-        <div>
+        <div class="login-field">
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input
@@ -52,7 +54,7 @@
         </div>
 
         <!-- Confirm Password -->
-        <div>
+        <div class="login-field">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input
@@ -71,7 +73,7 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button>
+            <x-primary-button class="login-button">
                 {{ __('Register') }}
             </x-primary-button>
         </div>

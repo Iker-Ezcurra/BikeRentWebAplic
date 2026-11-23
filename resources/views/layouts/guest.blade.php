@@ -14,17 +14,11 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="">
+    <body class="auth-page">
         <div class="">
-            <div>
-                <a href="/">
-                    <x-application-logo class="" />
-                </a>
-            </div>
-
-            <div class="">
+            <main class="auth-wrapper">
                 {{ $slot }}
-            </div>
+            </main>
         </div>
     </body>
 </html>

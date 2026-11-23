@@ -1,0 +1,9 @@
+/* Login */
+.login-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--green-button-color);
+    transition: 0.3s;
+}

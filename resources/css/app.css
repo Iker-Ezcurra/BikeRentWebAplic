@@ -9,11 +9,14 @@
 @import './layout/header.css';
 @import './layout/navigation.css';
 @import './pages/bike.css';
+@import './pages/auth.css';
 
 :root {
   --primary-color: #2081ff;
   --secondary-color: #00b7b8;
   --login-color: #7a8aff;
+  --title-color: #333;
+  --subtitle-color: #777;
   --green-button-color: #26FF7C;
   --red-button-color: #ff0068;
   --red: #ff0000;

@@ -6,7 +6,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="" />
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form method="POST" action="{{ route('password.email') }}" class="login-form">
         @csrf
 
         <!-- Email Address -->
