@@ -1,13 +1,13 @@
 .bike__card {
-    background-color: #fff;
+    background-color: var(--withe);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 300px;
     width: 300px;
     padding: 20px;
     margin: 20px;
+    overflow: hidden;
 }
-
 .bike__card a{
     display:none !important;
 }
@@ -15,4 +15,20 @@
 .bike__card:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
+}
+
+.maintenance-badge {
+    background-color: var(--red);
+    color: var(--withe);
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 12px 0;
+    margin: -20px -20px 15px -20px;
+    width: calc(100% + 40px);
+    box-sizing: border-box;
+}
+
+.maintenance-badge p {
+    margin: 0;
 }

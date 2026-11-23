@@ -13,14 +13,15 @@
             {{ number_format($bike->price_per_hour, 2) }} €/hora
         </p>
 
-        <p>
-            <strong>Estado:</strong>
-            {{ ucfirst($bike->status) }}
-        </p>
-
         <a href="{{ route('bikes.show', $bike->id) }}">
             Ver información
         </a>
+
+        @if($bike->status == 'maintenance')
+            <div class="maintenance-badge">
+                <p>En mantenimiento</p>
+            </div>
+        @endif
 
     </div>
 
