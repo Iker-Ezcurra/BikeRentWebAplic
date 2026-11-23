@@ -28,8 +28,4 @@
 
 </div>
 
-<script>
-    
-</script>
-
 @endsection
