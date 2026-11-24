@@ -1,6 +1,6 @@
 @forelse($bikes as $bike)
 
-    <div class="bike__card">
+    <div class="bike__card card-hover">
 
         <h2>{{ $bike->model }}</h2>
 

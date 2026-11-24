@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="">
+    <div class="bike__card">
 
         <h1>{{ $bike->model }}</h1>
 
@@ -33,13 +33,13 @@
             {{ $bike->status }}
         </div>
 
-        <a href="{{ route('bookings.create', $bike->id) }}">
+        <x-primary-button onclick="window.location.href='{{ route('bookings.create', $bike->id) }}'" class="standar-button">
             Reservar
-        </a>
+        </x-primary-button>
 
-        <a href="{{ route('bikes.index') }}" class="">
-            Volver al catálogo
-        </a>
+        <x-primary-button onclick="window.location.href='{{ route('bikes.index') }}'" class="button-back">
+            ←
+        </x-primary-button>
 
     </div>
 
