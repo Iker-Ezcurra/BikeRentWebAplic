@@ -69,7 +69,7 @@
     border: none;
 
     background-color: var(--title-color);
-    color: white;
+    color: var(--subtitle-color);
 
     display: flex;
     align-items: center;

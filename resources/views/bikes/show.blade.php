@@ -6,30 +6,30 @@
 
     <div class="bike__card">
 
-        <h1>{{ $bike->model }}</h1>
+        <h1 class="title">{{ $bike->model }}</h1>
 
-        <div class="">
-            <span class="">ID:</span>
+        <div class="info">
+            <span class="bike__label">ID:</span>
             {{ $bike->id }}
         </div>
 
-        <div class="">
-            <span class="">Número de serie:</span>
+        <div class="info">
+            <span class="bike__label">Número de serie:</span>
             {{ $bike->serial_number }}
         </div>
 
-        <div class="">
-            <span class="">Modelo:</span>
+        <div class="info">
+            <span class="bike__label">Modelo:</span>
             {{ $bike->model }}
         </div>
 
-        <div class="">
-            <span class="">Precio por hora:</span>
+        <div class="info">
+            <span class="bike__label">Precio por hora:</span>
             {{ number_format($bike->price_per_hour, 2) }} €
         </div>
 
-        <div class="">
-            <span class="">Estado:</span>
+        <div class="info">
+            <span class="bike__label">Estado:</span>
             {{ $bike->status }}
         </div>
 

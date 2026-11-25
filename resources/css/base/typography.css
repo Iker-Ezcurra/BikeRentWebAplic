@@ -1,0 +1,11 @@
+.title{
+    color: var(--title-color);
+}
+
+.subtitle{
+    color: var(--subtitle-color);
+}
+
+.info {
+    color: var(--text-color);
+}

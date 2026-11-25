@@ -13,13 +13,54 @@
 @import './pages/booking.css';
 
 :root {
-  --primary-color: #2081ff;
-  --secondary-color: #00b7b8;
-  --login-color: #7a8aff;
-  --title-color: #333;
-  --subtitle-color: #777;
-  --green-button-color: #26FF7C;
-  --red-button-color: #ff0068;
-  --red: #ff0000;
-  --withe: #ffffff;
+    /* Colores principales */
+    --primary-color: #2081ff;
+    --secondary-color: #00b7b8;
+    --login-color: #7a8aff;
+
+    /* Textos */
+    --title-color: #333333;
+    --subtitle-color: #505050;
+    --text-color: #666666;
+
+    /* Estados */
+    --green-button-color: #26FF7C;
+    --red-button-color: #ff0068;
+    --red: #ff0000;
+    --withe: #ffffff;
+
+    /* Fondos */
+    --background-color-card: #f5f7fa;
+
+    /* Bordes y sombras */
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 6px var(--shadow-color);
+}
+
+[data-theme="dark"] {
+    /* Colores principales */
+    --primary-color: #121826;;
+    --secondary-color: #0b3535;
+    --login-color: #9ba6ff;
+
+    /* Textos */
+    --title-color: #f1f5f9;
+    --subtitle-color: #a0aec0;
+    --text-color: #cbd5e1;
+
+    /* Estados */
+    --green-button-color: #26d977;
+    --red-button-color: #ff4785;
+    --red: #ff4d4d;
+    --withe: #ffffff;
+
+    /* Fondos */
+    --background-color-card: #1e293b;
+    
+
+    /* Bordes y sombras */
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-shadow: 0 4px 8px var(--shadow-color);
 }

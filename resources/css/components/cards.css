@@ -1,7 +1,7 @@
 .bike__card {
-    background-color: var(--withe);
+    background-color: var(--background-color-card);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
 
     width: 100%;
     max-width: 300px;
@@ -15,6 +15,18 @@
     align-items: center;
 
     overflow: hidden;
+}
+
+.bike__card h2 {
+    color: var(--title-color);
+}
+
+.bike__card p {
+    color: var(--text-color);
+}
+
+.bike__card #maintenance-text {
+    color: var(--white);
 }
 
 .bike__card img {
@@ -49,9 +61,9 @@
 }
 
 .booking__card {
-    background-color: var(--withe);
+    background-color: var(--background-color-card);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
     height: auto;
     width: fit-content;
     padding: 20px;
@@ -59,4 +71,12 @@
 }
 .booking__card a{
     display:none !important;
+}
+
+.booking__card h2 {
+    color: var(--title-color);
+}
+
+.booking__card div {
+    color: var(--text-color);
 }

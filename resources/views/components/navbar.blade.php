@@ -27,7 +27,7 @@
         @endauth
 
         <button id="theme-toggle" class="btn btn-theme">
-            🌙 Modo oscuro
+            Modo oscuro
         </button>
 
     </div>

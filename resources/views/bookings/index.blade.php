@@ -5,7 +5,7 @@
 @section('content')
     <div>
 
-        <h1>Mis reservas</h1>
+        <h1 class="title">Mis reservas</h1>
 
         <!-- Mensajes de éxito -->
         @if (session('success'))

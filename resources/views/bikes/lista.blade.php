@@ -22,7 +22,7 @@
 
         @if($bike->status == 'maintenance')
             <div class="maintenance-badge">
-                <p>En mantenimiento</p>
+                <p id="maintenance-text">En mantenimiento</p>
             </div>
         @endif
 
