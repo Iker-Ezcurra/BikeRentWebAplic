@@ -2,6 +2,9 @@
 
     <div class="bike__card card-hover">
 
+        <img src="{{ asset('storage/' . $bike->imagen) }}"
+             alt="{{ $bike->name }}">
+
         <h2>{{ $bike->model }}</h2>
 
         <p>
