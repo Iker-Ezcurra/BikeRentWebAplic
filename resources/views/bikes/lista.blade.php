@@ -1,6 +1,8 @@
 @forelse($bikes as $bike)
 
-    <div class="bike__card card-hover">
+    <div class="bike__card card-hover"
+         data-status="{{ $bike->status }}"
+         data-price="{{ $bike->price_per_hour }}">
 
         <img src="{{ asset('storage/' . $bike->imagen) }}"
              alt="{{ $bike->name }}">

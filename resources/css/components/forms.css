@@ -1,6 +1,6 @@
 
 .login-form {
-    background-color: var(--withe);
+    background-color: var(--background-color-card);
     width: 100%;
     max-width: 420px;
     padding: 40px;

@@ -1,14 +1,81 @@
-.bike__buscador {
+/* CONTENEDOR DE FILTROS */
+.filtros {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
     margin: 25px 0;
+    flex-wrap: wrap;
 }
 
-.bike__buscador input {
-    width: 350px;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+/* SELECT DE DISPONIBILIDAD */
+#filtroDisponibilidad {
+    padding: 12px 40px 12px 16px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #252525;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
     outline: none;
+    transition: all 0.3s ease;
+}
+
+/* OPCIONES DEL SELECT */
+#filtroDisponibilidad option {
+    background-color: #252525;
+    color: white;
+}
+
+/* HOVER DEL SELECT */
+#filtroDisponibilidad:hover {
+    border-color: var(--green-button-color);
+}
+
+/* BOTÓN DE ORDENACIÓN */
+#ordenarPrecio {
+    padding: 12px 20px;
+    border: 1px solid var(--green-button-color);
+    border-radius: 10px;
+    background-color: var(--green-button-color);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* HOVER DEL BOTÓN */
+#ordenarPrecio:hover {
+    background-color: var(--green-button-color);
+    border-color: var(--green-button-color);
+    transform: translateY(-2px);
+}
+
+/* EFECTO AL PULSAR */
+#ordenarPrecio:active {
+    transform: translateY(0);
+}
+
+/* FOCUS PARA ACCESIBILIDAD */
+#filtroDisponibilidad:focus-visible,
+#ordenarPrecio:focus-visible {
+    outline: 2px solid var(--green-button-color);
+    outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filtroDisponibilidad,
+    #ordenarPrecio {
+        width: 100%;
+    }
+
 }

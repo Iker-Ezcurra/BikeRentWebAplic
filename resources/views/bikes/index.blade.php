@@ -8,14 +8,18 @@
 
     <h1 class="title">Listado de bicicletas</h1>
 
-    {{-- Buscador --}}
-    <div class="bike__buscador">
+    <!-- Filtros -->
+    <div class="filtros">
 
-        <input
-            type="text"
-            id="buscador"
-            placeholder="Buscar bicicleta..."
-        >
+        <select id="filtroDisponibilidad">
+            <option value="todas">Todas las bicicletas</option>
+            <option value="disponible">Disponibles</option>
+            <option value="no-disponible">No disponibles</option>
+        </select>
+
+        <button id="ordenarPrecio">
+            Ordenar por precio ↑
+        </button>
 
     </div>
 
