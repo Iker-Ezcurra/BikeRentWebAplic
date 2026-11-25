@@ -1,11 +1,18 @@
 .title{
     color: var(--title-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .subtitle{
     color: var(--subtitle-color);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
 }
 
 .info {
     color: var(--text-color);
+    font-family: 'space Grotesk', sans-serif;
+    font-size: 1rem;
 }

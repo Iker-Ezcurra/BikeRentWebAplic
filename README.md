@@ -56,3 +56,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+Para inicia con la organizacion de los modulos de JavaScrip tenemos el app.js que se encargara de importal los demas archivos. El archivio catalogo.js se encarga de manejar el eveto de llevar a los clientes a la pagina donde veran la informacion de las bicis al clicar las carpetas. El filter.js se encargara de regocer todas las bicis que esten en el catalogo para ir filtrandolos segun lo que seleccione el usuario. El order.js se encarga de regocer las vicis dentro de un array para despues ordenarlos en funcion de como lo desee el usuario con su precio. Por ultimo el theme.js se encargara de cambiar los estilos de todas las paginas y gracias al localStorage los cada vez que se cambie de tema en una pantalla los cambios se veran afectados en todas las ventanas eh icluso al recargar la pagina.
+
+Para iniciar el proyecto si es la primera vez que se baja el proyecto desde el repositorio el proyecto trae con el un archivo llamado setupLaravelRepoInLocal.sh para que se hagan todas las configuraciones. Una vez echo eso sera necesario inicial en contenedor con sail up -d y por ulitmo usar el comando npm run dev.
