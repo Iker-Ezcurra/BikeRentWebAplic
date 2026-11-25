@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('body-class', 'booking-page')
+
 @section('content')
     <div>
 
@@ -30,9 +32,11 @@
 
         @else
 
+        <div class="bookings__container">
+
             @foreach ($bookings as $booking)
 
-                <div>
+                <div class="booking__card">
 
                     <h2>{{ $booking->bike?->model ?? 'Bicicleta no disponible' }}</h2>
 
@@ -73,41 +77,43 @@
 
                     <br>
 
-                    <!-- Consultar detalles -->
-                    <a href="{{ route('bookings.show', $booking->id) }}">
-                        Ver detalles
-                    </a>
+                    <div class="booking-buttons">
 
-                    <!-- Cancelar reserva -->
-                    @if ($booking->status === 'pending')
+                        <!-- Consultar detalles -->
+                        <x-primary-button
+                            onclick="window.location.href='{{ route('bookings.show', $booking->id) }}'"
+                            class="standar-button">
+                            Ver detalles
+                        </x-primary-button>
 
-                        <form action="{{ route('bookings.cancel', $booking->id) }}" method="POST">
+                        <!-- Cancelar reserva -->
+                        @if ($booking->status === 'pending')
 
-                            @csrf
-                            @method('PATCH')
+                            <form action="{{ route('bookings.cancel', $booking->id) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
 
-                            <button type="submit">
-                                Cancelar reserva
-                            </button>
+                                <button type="submit" class="cancel-button">
+                                    Cancelar reserva
+                                </button>
+                            </form>
 
-                        </form>
+                        @endif
 
-                    @endif
+                    </div>
 
                 </div>
 
-                <hr>
-
             @endforeach
+        </div>
 
         @endif
 
         <br>
 
-        <a href="{{ route('bikes.index') }}">
-            Volver al catálogo de bicicletas
-        </a>
-
+        <x-primary-button onclick="window.location.href='{{ route('bikes.index') }}'" class="button-back">
+            ←
+        </x-primary-button>
     </div>
 
 @endsection

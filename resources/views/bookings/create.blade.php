@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@section('body-class', 'booking-page')
+
 @section('content')
 
-    <div>
+    <div class="booking__card">
 
         <h1>Reservar bicicleta</h1>
 
@@ -72,15 +74,15 @@
 
             </div>
 
-            <button type="submit">
+            <button type="submit" class="standar-button">
                 Confirmar reserva
             </button>
 
         </form>
 
-        <a href="{{ route('bikes.show', $bike->id) }}">
-            Volver a los detalles de la bicicleta
-        </a>
+        <x-primary-button onclick="window.location.href='{{ route('bikes.show', $bike->id) }}'" class="button-back">
+            ←
+        </x-primary-button>
 
     </div>
 
