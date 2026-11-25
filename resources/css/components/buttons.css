@@ -1,0 +1,85 @@
+/* estandar */
+.standar-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--green-button-color);
+    transition: 0.3s;
+}
+
+/* carcelar */
+.cancel-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--red-button-color);
+    transition: 0.3s;
+}
+
+/* Navigation */
+.navbar .nav-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    width: auto;
+}
+
+.navbar .nav-buttons form {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    margin: 0;
+}
+
+.navbar .nav-buttons button,
+.navbar .nav-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.navbar .nav-buttons button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 45px;
+}
+
+/* Retroceder */
+.button-back {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: none;
+
+    background-color: var(--title-color);
+    color: var(--subtitle-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+
+    z-index: 1000;
+}
+

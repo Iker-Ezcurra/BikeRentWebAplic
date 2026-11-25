@@ -16,28 +16,29 @@ const buscador = document.getElementById('buscador');
 const lista = document.getElementById('lista-bicicletas');
 
 let temporizador;
+if (buscador) {
+    buscador.addEventListener('input', function () {
 
-buscador.addEventListener('input', function () {
+        clearTimeout(temporizador);
 
-    clearTimeout(temporizador);
+        temporizador = setTimeout(() => {
 
-    temporizador = setTimeout(() => {
+            const search = buscador.value;
 
-        const search = buscador.value;
+            fetch(`{{ route('bikes.index') }}?search=${encodeURIComponent(search)}`, {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.text())
+            .then(html => {
+                lista.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error al buscar bicicletas:', error);
+            });
 
-        fetch(`{{ route('bikes.index') }}?search=${encodeURIComponent(search)}`, {
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => response.text())
-        .then(html => {
-            lista.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('Error al buscar bicicletas:', error);
-        });
+        }, 300);
 
-    }, 300);
-
-});
+    });
+}

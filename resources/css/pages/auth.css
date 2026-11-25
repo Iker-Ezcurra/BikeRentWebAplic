@@ -1,0 +1,96 @@
+/* =========================================
+   LOGIN
+========================================= */
+
+/* Fondo de la página */
+body.auth-page {
+    background-color: var(--login-color);
+    min-height: 100vh;
+}
+
+
+/* Título */
+.login-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.login-subtitle {
+    text-align: center;
+    color: var(--subtitle-color);
+    margin-bottom: 30px;
+}
+
+/* Campos */
+.login-field {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.login-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--title-color);
+}
+
+/* Inputs */
+.login-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: 0.3s;
+}
+
+/* Focus */
+.login-field input:focus {
+    border-color: var(--login-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(122, 138, 255, 0.3);
+}
+
+/* Remember me */
+.login-remember {
+    margin-bottom: 20px;
+}
+
+.login-remember label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Parte inferior */
+.login-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Olvidé contraseña */
+.login-forgot {
+    text-align: center;
+    text-decoration: none;
+    color: var(--login-color);
+    font-size: 14px;
+}
+
+.login-forgot:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        margin: 20px;
+        padding: 25px;
+    }
+}

@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <div class="">
+    <div class="login-form">
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
 

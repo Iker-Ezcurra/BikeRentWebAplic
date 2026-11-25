@@ -6,7 +6,7 @@
 
 <div>
 
-    <h1 class="bike__title">Listado de bicicletas</h1>
+    <h1 class="title">Listado de bicicletas</h1>
 
     {{-- Buscador --}}
     <div class="bike__buscador">
@@ -27,9 +27,5 @@
     </div>
 
 </div>
-
-<script>
-    
-</script>
 
 @endsection
